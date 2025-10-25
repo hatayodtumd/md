@@ -7,18 +7,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
-  <!-- Logo Section -->
   <section class="bg-blue-900 py-8">
     <div class="container mx-auto px-4 flex justify-center">
       <img src="hataylogo.png" alt="Hatay ODTÜ Mezunları Derneği Logo" class="h-48 md:h-72">
     </div>
   </section>
 
-  <!-- Header -->
-  <header class="bg-blue-900 text-white py-4">
+  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Hatay ODTÜ Mezunları Derneği</h1>
-      <nav>
+      <h1 class="text-xl md:text-2xl font-bold">Hatay ODTÜ Mezunları Derneği</h1>
+      
+      <button id="menu-btn" class="md:hidden block text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <nav class="hidden md:block">
         <ul class="flex space-x-6">
           <li><a href="#anasayfa" class="hover:text-gray-300">Ana Sayfa</a></li>
           <li><a href="#hakkimizda" class="hover:text-gray-300">Hakkımızda</a></li>
@@ -27,9 +32,17 @@
         </ul>
       </nav>
     </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <ul class="flex flex-col items-center py-4">
+        <li><a href="#anasayfa" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Hakkımızda</a></li>
+        <li><a href="#etkinlikler" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Etkinlikler</a></li>
+        <li><a href="#iletisim" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">İletişim</a></li>
+      </ul>
+    </div>
   </header>
 
-  <!-- Hero Section -->
   <section id="anasayfa" class="bg-blue-800 text-white py-16">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-4xl font-bold mb-4">Hoş Geldiniz!</h2>
@@ -38,7 +51,6 @@
     </div>
   </section>
 
-  <!-- Hakkımızda Section -->
   <section id="hakkimizda" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">Hakkımızda</h2>
@@ -49,7 +61,6 @@
     </div>
   </section>
 
-  <!-- Etkinlikler Section -->
   <section id="etkinlikler" class="bg-gray-200 py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8">Etkinliklerimiz</h2>
@@ -73,18 +84,17 @@
     </div>
   </section>
 
-  <!-- İletişim Section -->
-<section id="iletisim" class="py-16">
+  <section id="iletisim" class="py-16">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-8">İletişim</h2>
-    <div class="flex flex-col md:flex-row justify-center items-center">
-      <div class="md:w-1/2 text-center md:text-left">
+    <div class="flex flex-col md:flex-row justify-center items-start gap-8">
+      <div class="w-full md:w-1/2 text-center md:text-left">
         <p class="text-lg text-gray-700 mb-4">Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz:</p>
         <p class="text-gray-600">E-posta: hatayodtumd@gmail.com</p>
         <p class="text-gray-600">Telefon: +90 555 123 45 67</p>
         <p class="text-gray-600">Adres: Hatay, Türkiye</p>
       </div>
-      <div class="md:w-1/2 mt-6 md:mt-0">
+      <div class="w-full md:w-1/2">
         <div class="bg-white p-6 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-4">Bize Yazın</h3>
           <form action="https://formspree.io/f/mzzaojbg" method="POST">
@@ -99,7 +109,6 @@
   </div>
 </section>
 
-  <!-- Footer -->
   <footer class="bg-blue-900 text-white py-4">
     <div class="container mx-auto px-4 text-center">
       <p>&copy; 2025 Hatay ODTÜ Mezunları Derneği. Tüm hakları saklıdır.</p>
@@ -115,6 +124,21 @@
           behavior: 'smooth'
         });
       });
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
     });
   </script>
 </body>
