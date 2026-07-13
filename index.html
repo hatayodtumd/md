@@ -6,162 +6,153 @@
   <title>Hatay ODTÜ Mezunları Derneği</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-  <section class="bg-blue-900 py-8">
+<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+
+  <!-- Logo Banner Bölümü -->
+  <section class="bg-blue-900 py-6">
     <div class="container mx-auto px-4 flex justify-center">
-      <img src="hataylogo.png" alt="Hatay ODTÜ Mezunları Derneği Logo" class="h-48 md:h-72">
+      <img src="hataylogo.png" alt="Hatay ODTÜ Mezunları Derneği Logo" class="h-40 md:h-56 object-contain">
     </div>
   </section>
 
-  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50">
+  <!-- Navigasyon Menüsü -->
+  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50 border-t border-blue-800 shadow-md">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-xl md:text-2xl font-bold">Hatay ODTÜ Mezunları Derneği</h1>
+      <h1 class="text-lg md:text-xl font-bold tracking-wide">Hatay ODTÜ MD</h1>
       
+      <!-- Mobil Menü Butonu -->
       <button id="menu-btn" class="md:hidden block text-white focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
 
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6">
-          <li><a href="#anasayfa" class="hover:text-gray-300">Ana Sayfa</a></li>
-          <li><a href="#hakkimizda" class="hover:text-gray-300">Hakkımızda</a></li>
-          <li><a href="tuzuk.html" class="hover:text-gray-300">Tüzük</a></li>
-          <li><a href="#etkinlikler" class="hover:text-gray-300">Etkinlikler</a></li>
-          <li><a href="#iletisim" class="hover:text-gray-300">İletişim</a></li>
+      <!-- Masaüstü Navigasyon -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <ul class="flex space-x-6 font-medium">
+          <li><a href="#anasayfa" class="hover:text-yellow-400 transition">Ana Sayfa</a></li>
+          <li><a href="#hakkimizda" class="hover:text-yellow-400 transition">Hakkımızda</a></li>
+          <li><a href="#iletisim" class="hover:text-yellow-400 transition">İletişim</a></li>
         </ul>
+        <!-- İntranet Geçiş Köprüsü -->
+        <a href="https://portal.hatayodtumd.org" class="bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-bold px-4 py-2 rounded shadow transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+          Üye Girişi
+        </a>
       </nav>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
-      <ul class="flex flex-col items-center py-4">
-        <li><a href="#anasayfa" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Ana Sayfa</a></li>
-        <li><a href="#hakkimizda" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Hakkımızda</a></li>
-        <li><a href="tuzuk.html" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Tüzük</a></li>
-        <li><a href="#etkinlikler" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">Etkinlikler</a></li>
-        <li><a href="#iletisim" class="block py-2 px-4 hover:bg-blue-700 w-screen text-center">İletişim</a></li>
+    <!-- Mobil Navigasyon -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-950 border-t border-blue-800">
+      <ul class="flex flex-col items-center py-4 space-y-3 font-medium">
+        <li><a href="#anasayfa" class="block py-2 px-4 hover:text-yellow-400 w-screen text-center">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda" class="block py-2 px-4 hover:text-yellow-400 w-screen text-center">Hakkımızda</a></li>
+        <li><a href="#iletisim" class="block py-2 px-4 hover:text-yellow-400 w-screen text-center">İletişim</a></li>
+        <li class="pt-2">
+          <a href="https://portal.hatayodtumd.org" class="bg-yellow-500 hover:bg-yellow-600 text-blue-950 font-bold px-6 py-2 rounded shadow block text-center w-64 mx-auto">
+            Üye Girişi (Portal)
+          </a>
+        </li>
       </ul>
     </div>
   </header>
 
-  <section id="anasayfa" class="bg-blue-800 text-white py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-4">Hoş Geldiniz!</h2>
-      <p class="text-lg mb-6">Hatay ODTÜ Mezunları Derneği, ODTÜ mezunlarını bir araya getirerek sosyal, kültürel ve profesyonel etkinlikler düzenler.</p>
-      <a href="#iletisim" class="bg-yellow-500 text-black px-6 py-2 rounded hover:bg-yellow-600">Bize Katılın</a>
+  <!-- Hero (Karşılama) Bölümü -->
+  <section id="anasayfa" class="bg-gradient-to-b from-blue-900 to-blue-800 text-white py-20 md:py-28 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Geleceği Birlikte İnşa Ediyoruz</h2>
+      <p class="text-base md:text-xl text-blue-100 mb-10 leading-relaxed">
+        Hatay ODTÜ Mezunları Derneği, ODTÜ ruhunu ve dayanışmasını Hatay'da yaşatmak, mezunlarımızı bir araya getirerek şehrimize ve öğrencilerimize değer katmak için faaliyet gösterir.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#iletisim" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition text-center">
+          Bize Katılın
+        </a>
+        <a href="https://portal.hatayodtumd.org" class="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition text-center">
+          Üye Portalı'na Git
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="genel-kurul" class="bg-gray-200 py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Önemli Duyuru</h2>
-      
-      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border-t-8 border-blue-600">
-        <div class="p-8 md:p-12">
-          
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-            <div>
-              <span class="bg-blue-100 text-blue-700 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">Resmi Çağrı</span>
-              <h3 class="text-4xl font-extrabold text-gray-800 mt-4">1. Olağan Genel Kurul Toplantısı</h3>
-            </div>
-          </div>
+  <!-- Hakkımızda Bölümü (Minimal Ekstra) -->
+  <section id="hakkimizda" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Hakkımızda</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-4">
+        Bizler, Orta Doğu Teknik Üniversitesi’nin özgürlükçü, araştırmacı ve toplumsal faydayı gözeten kültürünü Hatay coğrafyasında sürdürmeyi amaçlayan bir topluluğuz. 
+      </p>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        Derneğimiz; mezunlar arası iletişimi güçlendirirken, bölgedeki gençlerin eğitim süreçlerine destek olmayı ve akademik/profesyonel bilgi birikimini yerel projelerle topluma aktarmayı temel misyon edinmiştir.
+      </p>
+    </div>
+  </section>
 
-          <div class="prose max-w-none text-gray-600 mb-8 text-lg leading-relaxed">
-            <p>
-              Değerli üyelerimiz, kuruluşumuzun ardından gerçekleştireceğimiz bu ilk ve tarihi genel kurulumuzda; derneğimizin geleceğini birlikte şekillendirmek ve ilk resmi yönetim organlarımızı belirlemek üzere bir araya geliyoruz. Çoğunluk sağlanamaması durumunda ikinci toplantı detayları aşağıda belirtilmiştir.
+  <!-- İletişim Bölümü -->
+  <section id="iletisim" class="py-16 bg-gray-100 border-t border-gray-200">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">İletişim</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        
+        <!-- İletişim Bilgileri -->
+        <div class="space-y-6">
+          <p class="text-lg text-gray-700 font-medium">Bizimle her zaman iletişime geçebilirsiniz:</p>
+          <div class="space-y-4 text-gray-600">
+            <p class="flex items-center gap-3">
+              <span class="text-blue-900 font-bold">📧 E-posta:</span> dernek@hatayodtumd.org
+            </p>
+            <p class="flex items-center gap-3">
+              <span class="text-blue-900 font-bold">📞 Telefon:</span> +90 555 123 45 67
+            </p>
+            <p class="flex items-start gap-3">
+              <span class="text-blue-900 font-bold shrink-0">📍 Adres:</span> 
+              <span>Gümüşgöze Mahallesi Yayla1 Sokak No:8/3,<br>Defne, Hatay, Türkiye 31000</span>
             </p>
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <div class="bg-blue-50 border border-blue-100 p-6 rounded-lg relative">
-              <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">1. Toplantı</div>
-              <p class="text-2xl font-bold text-blue-800 mb-2">15 Mart 2026</p>
-              <p class="font-semibold text-gray-800 mb-1">⏰ Saat: 12.00 - 15.00</p>
-              <p class="text-gray-700 font-medium">📍 Konum:</p>
-              <p class="text-gray-600 text-sm">ODTÜ Mezunları Derneği<br>İşçi Blokları Mah. 1540.Sokak No:58, Ankara</p>
-              <p class="text-gray-800 font-bold mt-2">🚪 Salon: Koçumbeli Salonu</p>
-            </div>
-
-            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg relative">
-              <div class="absolute top-0 right-0 bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">2. Toplantı (Çoğunluk Sağlanamazsa)</div>
-              <p class="text-2xl font-bold text-gray-700 mb-2">5 Nisan 2026</p>
-              <p class="font-semibold text-gray-800 mb-1">⏰ Saat: 10.00 - 13.00</p>
-              <p class="text-gray-700 font-medium">📍 Konum:</p>
-              <p class="text-gray-600 text-sm">ODTÜ Mezunları Derneği<br>İşçi Blokları Mah. 1540.Sokak No:58, Ankara</p>
-              <p class="text-gray-800 font-bold mt-2">🚪 Salon: Eymir Salonu</p>
-            </div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6">
-            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-              <span class="text-2xl mr-2">📋</span> Toplantı Programı (Gündem)
-            </h4>
-            <ol class="list-decimal list-inside text-gray-700 space-y-3 marker:text-blue-600 marker:font-bold">
-              <li>Açılış, yoklama, saygı duruşu ve İstiklal Marşı</li>
-              <li>Genel Kurul Divan Heyetinin (Başkan, Başkan Vekili ve Yazman) seçimi ve toplantı tutanaklarını imzalama yetkisi verilmesi</li>
-              <li><strong>Kurucu Yönetim Kurulu</strong> tarafından yapılan kuruluş çalışmalarının ve faaliyetlerin aktarılması</li>
-              <li>Kurucu Yönetim Kurulunun ibrası (aklanması)</li>
-              <li>Gelecek dönem çalışma programı ve tahmini bütçesinin görüşülerek onaylanması</li>
-              <li>Dernek zorunlu organlarının seçimi (Yönetim Kurulu ve Denetim Kurulu asil ve yedek üyelerinin gizli oy ile seçilmesi)</li>
-              <li>Dilek, temenniler ve kapanış</li>
-            </ol>
-          </div>
-
-          <div class="flex justify-center mt-8">
-            <a href="index.html#iletisim" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
-              İletişime Geç / Soru Sor
-            </a>
-          </div>
-
         </div>
+
+        <!-- İletişim Formu -->
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Bize Yazın</h3>
+          <form action="https://formspree.io/f/mzzaojbg" method="POST" class="space-y-4">
+            <div>
+              <input type="text" name="name" placeholder="Adınız" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div>
+              <input type="email" name="email" placeholder="E-posta Adresiniz" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div>
+              <textarea name="message" placeholder="Mesajınız" class="w-full p-3 border border-gray-300 rounded-lg h-32 resize-none focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-900 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition shadow">Mesajı Gönder</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="iletisim" class="py-16">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">İletişim</h2>
-    <div class="flex flex-col md:flex-row justify-center items-start gap-8">
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <p class="text-lg text-gray-700 mb-4">Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz:</p>
-        <p class="text-gray-600">E-posta: dernek@hatayodtumd.org</p>
-        <p class="text-gray-600">Telefon: +90 555 123 45 67</p>
-        <p class="text-gray-600">Adres: Gümüşgöze Mahallesi Yayla1 Sokak No:8/3, Defne, Hatay, Türkiye 31000</p>
-      </div>
-      <div class="w-full md:w-1/2">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-4">Bize Yazın</h3>
-          <form action="https://formspree.io/f/mzzaojbg" method="POST">
-            <input type="text" name="name" placeholder="Adınız" class="w-full p-2 mb-4 border rounded" required>
-            <input type="email" name="email" placeholder="E-posta" class="w-full p-2 mb-4 border rounded" required>
-            <textarea name="message" placeholder="Mesajınız" class="w-full p-2 mb-4 border rounded h-32" required></textarea>
-            <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800">Gönder</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <footer class="bg-blue-900 text-white py-4">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 Hatay ODTÜ Mezunları Derneği. Tüm hakları saklıdır.</p>
+  <!-- Footer Bölümü -->
+  <footer class="bg-blue-950 text-gray-400 py-6 border-t border-blue-900 text-sm text-center">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2026 Hatay ODTÜ Mezunları Derneği. Tüm hakları saklıdır.</p>
     </div>
   </footer>
 
+  <!-- Fonksiyonel Scriptler -->
   <script>
-    // Smooth scrolling for navigation links
+    // Linklere tıklandığında yumuşak kaydırma (Smooth Scrolling)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
 
-    // Mobile Menu Toggle
+    // Mobil Menü Aç/Kapat Kontrolü
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -169,11 +160,11 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close mobile menu when a link is clicked
+    // Mobil menüdeki linklere tıklanınca menüyü otomatik kapat
     document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
     });
   </script>
 </body>
